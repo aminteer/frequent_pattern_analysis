@@ -261,7 +261,7 @@ if __name__ == "__main__":
     with open('./data/dataset.pickle', 'rb') as handle:
         dataset = pickle.load(handle)
 
-    updated_dataset = reorder_transactions(dataset, 0.5)
+    updated_dataset = fpa_test.reorder_transactions(dataset, 0.5)
     updated_dataset_expected = {'T1': ['D', 'C', 'E'], 'T2': ['D', 'C', 'B'], 'T3': ['D', 'C', 'A'],
                                 'T4': ['D', 'C', 'A', 'E'], 'T5': ['D', 'C', 'A', 'B'], 'T6': ['B'],
                                 'T7': ['D', 'E'], 'T8': ['D', 'C', 'A', 'B'], 'T9': ['D', 'A', 'B', 'E'], 'T10': ['D', 'C', 'A', 'B', 'E']}
